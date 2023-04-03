@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:pharmine_app/presentaton/screens/appointments_screen.dart';
 import 'package:pharmine_app/presentaton/screens/home_screen.dart';
+import 'package:pharmine_app/presentaton/screens/orders_screen.dart';
+import 'package:pharmine_app/presentaton/screens/profile_screen.dart';
+import 'package:pharmine_app/presentaton/screens/settings_screen.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
@@ -7,6 +11,22 @@ class AppRouter {
       case '/':
         return MaterialPageRoute(
           builder: (_) => const HomeScreen(),
+        );
+      case '/settings':
+        return MaterialPageRoute(
+          builder: (_) => const SettingsScreen(),
+        );
+      case '/profile':
+        return MaterialPageRoute(
+          builder: (_) => const ProfileScreen(),
+        );
+        case '/orders':
+        return MaterialPageRoute(
+          builder: (_) => const OrdersScreen(),
+        );
+        case '/appointments':
+        return MaterialPageRoute(
+          builder: (_) => const AppointmentsScreen(),
         );
       default:
         return MaterialPageRoute(

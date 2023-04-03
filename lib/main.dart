@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmine_app/presentaton/router/app_router.dart';
+import 'package:pharmine_app/theme/theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,10 +23,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Pharmine',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: MyTheme.lightTheme,
       onGenerateRoute: appRouter.onGenerateRoute,
+      debugShowCheckedModeBanner: false,
     );
   }
 }

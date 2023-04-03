@@ -14,13 +14,16 @@ class MyTheme {
         secondary: pastelBlue,
       ),
       appBarTheme: AppBarTheme(
-        color: cloudWhite,
-        elevation: 4.0,
+        color: Colors.transparent,
+        elevation: 0.0,
         centerTitle: true,
         titleTextStyle: TextStyle(
           color: darkGrey,
           fontSize: 24.0,
           fontWeight: FontWeight.bold,
+        ),
+        actionsIconTheme: IconThemeData(
+          color: darkGrey,
         ),
       ),
     );

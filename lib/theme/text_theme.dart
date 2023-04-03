@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pharmine_app/theme/colors.dart';
 
 final customTextTheme = TextTheme(
   displayLarge: GoogleFonts.poppins(
@@ -18,7 +19,8 @@ final customTextTheme = TextTheme(
   ),
   titleLarge: GoogleFonts.poppins(
     fontSize: 24,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
+    color: darkGrey,
     letterSpacing: 0.15,
   ),
   titleMedium: GoogleFonts.poppins(

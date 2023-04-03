@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:pharmine_app/widgets/custom_appbar.dart';
 import 'package:pharmine_app/widgets/custom_bottom_navbar.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class AppointmentsScreen extends StatefulWidget {
+  const AppointmentsScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<AppointmentsScreen> createState() => _AppointmentsScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AppointmentsScreenState extends State<AppointmentsScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       appBar: CustomAppBar(
-        title: 'Pharmine',
+        title: 'Appointments',
       ),
       body: Center(
-        child: Text('Home'),
+        child: Text('Appointments'),
       ),
       bottomNavigationBar: CustomBottomNavBar(),
     );
