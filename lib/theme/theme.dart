@@ -26,6 +26,28 @@ class MyTheme {
           color: darkGrey,
         ),
       ),
+      pageTransitionsTheme: PageTransitionsTheme(
+        builders: {
+          for (var type in TargetPlatform.values)
+            type: CustomPageTransitionBuilder(),
+        }
+      )
+    );
+  }
+}
+
+class CustomPageTransitionBuilder extends PageTransitionsBuilder {
+  @override
+  Widget buildTransitions<T>(
+      Route<T> route,
+      BuildContext context,
+      Animation<double> animation,
+      Animation<double> secondaryAnimation,
+      Widget child,
+      ) {
+    return FadeTransition(
+      opacity: animation,
+      child: child,
     );
   }
 }
