@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:pharmine_app/presentaton/router/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
+    MyApp(
+      appRouter: AppRouter(),
+    ),
+  );
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  final AppRouter appRouter;
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
+  const MyApp({
+    Key? key,
+    required this.appRouter,
+  }) : super(key: key);
 
-class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: 'Pharmine',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      onGenerateRoute: appRouter.onGenerateRoute,
+    );
   }
 }
