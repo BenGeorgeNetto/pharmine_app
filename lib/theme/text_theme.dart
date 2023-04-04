@@ -25,7 +25,7 @@ final customTextTheme = TextTheme(
   ),
   titleMedium: GoogleFonts.poppins(
     fontSize: 20,
-    fontWeight: FontWeight.w400,
+    fontWeight: FontWeight.bold,
     letterSpacing: 0.15,
   ),
   bodyLarge: GoogleFonts.poppins(
