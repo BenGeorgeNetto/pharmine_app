@@ -33,13 +33,18 @@ class SettingsScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                SettingsElementHeading(heading: 'Payment Settings'),
-                SettingsElement(option: 'Payment Options'),
-                Divider(
+              children: [
+                const SettingsElementHeading(heading: 'Payment Settings'),
+                InkWell(
+                  child: const SettingsElement(option: 'Payment Options'),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/settings/payment_options');
+                  },
+                ),
+                const Divider(
                   thickness: 2.0,
                 ),
-                SettingsElement(option: 'Subscription'),
+                const SettingsElement(option: 'Subscription'),
               ],
             ),
           ),

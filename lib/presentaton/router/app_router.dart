@@ -38,6 +38,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const Medications(),
         );
+        case '/settings/payment_options':
+        return MaterialPageRoute(
+          builder: (_) => const PaymentOptions(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
