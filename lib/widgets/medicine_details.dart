@@ -1,26 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:pharmine_app/models/medicine_model.dart';
 import 'package:pharmine_app/widgets/custom_appbar.dart';
 
 class MedicineDetails extends StatelessWidget {
-  final String medicineName;
-  final String medicineId;
-  final String type;
-  final String quantity;
-  final String medicinePrice;
-  final String medicineImagePath;
-  final String use;
-  final String dosage;
+  final Medicine medicine;
 
   const MedicineDetails({
     Key? key,
-    required this.medicineName,
-    required this.medicineId,
-    required this.type,
-    required this.medicinePrice,
-    required this.medicineImagePath,
-    required this.quantity,
-    required this.use,
-    required this.dosage,
+    required this.medicine,
   }) : super(key: key);
 
   @override
@@ -38,7 +25,7 @@ class MedicineDetails extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
-                  medicineImagePath,
+                  medicine.medicineImagePath,
                   fit: BoxFit.fitWidth,
                 ),
                 Padding(
@@ -50,18 +37,18 @@ class MedicineDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        medicineName,
+                        medicine.medicineName,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: 24.0,
                             ),
                       ),
                       Text(
-                        '$type | $quantity',
+                        '${medicine.type} | ${medicine.quantity}',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       Text(
-                        'Rs. $medicinePrice',
+                        'Rs. ${medicine.medicinePrice}',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               fontWeight: FontWeight.bold,
                               fontSize: 20.0,
@@ -84,7 +71,7 @@ class MedicineDetails extends StatelessWidget {
                           const SizedBox(width: 8.0),
                           Flexible(
                             child: Text(
-                              use,
+                              medicine.use,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           ),
@@ -107,7 +94,7 @@ class MedicineDetails extends StatelessWidget {
                           const SizedBox(width: 8.0),
                           Flexible(
                             child: Text(
-                              dosage,
+                              medicine.dosage,
                               style: Theme.of(context).textTheme.bodyMedium,
                             ),
                           ),
