@@ -1,6 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:pharmine_app/widgets/custom_appbar.dart';
@@ -8,14 +6,14 @@ import 'package:pharmine_app/widgets/custom_bottom_navbar.dart';
 
 import "package:pharmine_app/assets/medicines_dummy.dart";
 
-class AppointmentsScreen extends StatefulWidget {
-  const AppointmentsScreen({Key? key}) : super(key: key);
+class MedicinesScreen extends StatefulWidget {
+  const MedicinesScreen({Key? key}) : super(key: key);
 
   @override
-  State<AppointmentsScreen> createState() => _AppointmentsScreenState();
+  State<MedicinesScreen> createState() => _MedicinesScreenState();
 }
 
-class _AppointmentsScreenState extends State<AppointmentsScreen> {
+class _MedicinesScreenState extends State<MedicinesScreen> {
   final _searchController = TextEditingController();
   final _suggestionsStream = StreamController<List<String>>();
 

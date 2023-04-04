@@ -27,7 +27,7 @@ class AppRouter {
         );
         case '/appointments':
         return MaterialPageRoute(
-          builder: (_) => const AppointmentsScreen(),
+          builder: (_) => const MedicinesScreen(),
         );
         case '/payment_options':
         return MaterialPageRoute(
