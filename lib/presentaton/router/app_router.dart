@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pharmine_app/presentaton/screens/appointments_screen.dart';
+import 'package:pharmine_app/presentaton/screens/cart.dart';
 import 'package:pharmine_app/presentaton/screens/home_screen.dart';
 import 'package:pharmine_app/presentaton/screens/medications.dart';
 import 'package:pharmine_app/presentaton/screens/orders_screen.dart';
@@ -41,6 +42,10 @@ class AppRouter {
         case '/settings/payment_options':
         return MaterialPageRoute(
           builder: (_) => const PaymentOptions(),
+        );
+        case '/orders/cart':
+          return MaterialPageRoute(
+          builder: (_) => const Cart()
         );
       default:
         return MaterialPageRoute(
