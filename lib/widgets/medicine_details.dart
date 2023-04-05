@@ -24,7 +24,7 @@ class MedicineDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(
+                Image.network(
                   medicine.medicineImagePath,
                   fit: BoxFit.fitWidth,
                 ),

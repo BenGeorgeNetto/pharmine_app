@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pharmine_app/assets/medicines_dummy.dart';
 import 'package:pharmine_app/presentaton/screens/appointments_screen.dart';
 import 'package:pharmine_app/presentaton/screens/cart.dart';
 import 'package:pharmine_app/presentaton/screens/medications_screen.dart';
@@ -7,8 +8,9 @@ import 'package:pharmine_app/presentaton/screens/orders_screen.dart';
 import 'package:pharmine_app/presentaton/screens/payment_options_screen.dart';
 import 'package:pharmine_app/presentaton/screens/profile_screen.dart';
 import 'package:pharmine_app/presentaton/screens/settings_screen.dart';
+import 'package:pharmine_app/widgets/medicine_details.dart';
 
-import '../screens/medicine_details.dart';
+import '../../models/medicine_model.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
@@ -44,8 +46,18 @@ class AppRouter {
       case '/medication/info':
         return MaterialPageRoute(
             builder: (BuildContext context) {
-              //some custom code
-              return const MedicineInfoScreen();
+              final args = settings.arguments as Map<String, String>;
+              final medicineInfo = medicines_dummy_list[args['name']] ?? {};
+              return MedicineDetails(medicine: Medicine(
+                medicineName: args['name']!,
+                medicinePrice: medicineInfo['medicine_price']!.toString(),
+                use: medicineInfo['use'].toString(),
+                medicineImagePath: medicineInfo['medicine_image_path'].toString(),
+                medicineId: medicineInfo['medicine_id'].toString(),
+                type: medicineInfo['type'].toString(),
+                quantity: medicineInfo['quantity'].toString(),
+                dosage: medicineInfo['dosage'].toString(),
+              ));
             },
             settings: settings
         );
