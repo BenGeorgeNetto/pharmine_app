@@ -39,6 +39,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const PaymentOptions(),
         );
+        case '/orders/cart':
+        return MaterialPageRoute(
+          builder: (_) => const Cart(),
+        );
         case '/medications':
         return MaterialPageRoute(
           builder: (_) => const MedicinesScreen(),

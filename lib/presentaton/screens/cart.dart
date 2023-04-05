@@ -11,13 +11,19 @@ class Cart extends StatefulWidget {
 class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(
+    return const Scaffold(
+      appBar: CustomAppBar(
         title: 'Cart',
       ),
-      body: Column(
-
-      )
+      body: SizedBox(
+        height: double.infinity,
+        width: double.infinity,
+        child: Center(
+          child: Text(
+            'Cart is empty'
+          ),
+        )
+      ),
     );
   }
 }

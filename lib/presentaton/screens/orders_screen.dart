@@ -23,7 +23,9 @@ class _OrdersScreenState extends State<OrdersScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/orders/cart');
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFFF7F80),
                   shape: RoundedRectangleBorder(
