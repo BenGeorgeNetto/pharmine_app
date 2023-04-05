@@ -52,7 +52,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBar(
-        title: 'Search',
+        title: 'Search Medicines'
       ),
       body: Column(children:
       [
