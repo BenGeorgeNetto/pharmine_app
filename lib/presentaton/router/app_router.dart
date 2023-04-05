@@ -8,6 +8,8 @@ import 'package:pharmine_app/presentaton/screens/payment_options_screen.dart';
 import 'package:pharmine_app/presentaton/screens/profile_screen.dart';
 import 'package:pharmine_app/presentaton/screens/settings_screen.dart';
 
+import '../screens/medicine_details.dart';
+
 class AppRouter {
   Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -38,6 +40,14 @@ class AppRouter {
         case '/medications':
         return MaterialPageRoute(
           builder: (_) => const MedicinesScreen(),
+        );
+      case '/medication/info':
+        return MaterialPageRoute(
+            builder: (BuildContext context) {
+              //some custom code
+              return const MedicineInfoScreen();
+            },
+            settings: settings
         );
         case '/settings/payment_options':
         return MaterialPageRoute(
