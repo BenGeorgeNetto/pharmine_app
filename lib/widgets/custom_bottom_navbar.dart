@@ -14,7 +14,6 @@ class CustomBottomNavBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<BottomNavBarCubit, BottomNavBarState>(
@@ -38,10 +37,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               IconButton(
                 onPressed: () {
                   BlocProvider.of<BottomNavBarCubit>(context).tapIcon(1);
-                  Navigator.pushReplacementNamed(context, '/appointments');
+                  Navigator.pushReplacementNamed(context, '/medications');
                 },
                 icon: Icon(
-                  Icons.calendar_month,
+                  Icons.medication_rounded,
                   color: state.colors[1],
                 ),
               ),
@@ -57,8 +56,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
               ),
               IconButton(
                 onPressed: () {
-                  BlocProvider.of<BottomNavBarCubit>(context)
-                      .tapIcon(3);
+                  BlocProvider.of<BottomNavBarCubit>(context).tapIcon(3);
                   Navigator.pushReplacementNamed(context, '/settings');
                 },
                 icon: Icon(

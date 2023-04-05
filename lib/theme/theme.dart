@@ -26,6 +26,14 @@ class MyTheme {
           color: darkGrey,
         ),
       ),
+      cardTheme: CardTheme(
+        color: pastelYellow,
+        elevation: 0.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        // margin: EdgeInsets.zero,
+      ),
       pageTransitionsTheme: PageTransitionsTheme(
         builders: {
           for (var type in TargetPlatform.values)
