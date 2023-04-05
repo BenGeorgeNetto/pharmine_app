@@ -54,14 +54,18 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
       appBar: const CustomAppBar(
         title: 'Search',
       ),
-      body: Column(children: [
-        TextField(
+      body: Column(children:
+      [
+      Padding(
+      padding: const EdgeInsets.all(16.0),
+        child: TextField(
           autocorrect: false,
           controller: _searchController,
           decoration: const InputDecoration(
             hintText: 'Search...',
           ),
         ),
+      ),
         StreamBuilder<List<String>>(
           stream: _suggestionsStream.stream,
           builder: (context, snapshot) {
