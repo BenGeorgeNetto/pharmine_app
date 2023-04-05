@@ -54,18 +54,23 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
       appBar: const CustomAppBar(
         title: 'Search',
       ),
-      body: Column(children: [
-        TextField(
+      body: Column(children:
+      [
+      Padding(
+      padding: const EdgeInsets.all(16.0),
+        child: TextField(
+          autocorrect: false,
           controller: _searchController,
           decoration: const InputDecoration(
             hintText: 'Search...',
           ),
         ),
+      ),
         StreamBuilder<List<String>>(
           stream: _suggestionsStream.stream,
           builder: (context, snapshot) {
             if (!snapshot.hasData || snapshot.data!.isEmpty) {
-              return SizedBox.shrink();
+              return const SizedBox.shrink();
             }
             final suggestions = snapshot.data!;
             return ListView.builder(
@@ -79,6 +84,8 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                     _searchController.text = suggestion;
                     _suggestionsStream.add([]);
                     // Do something with the selected suggestion.
+                    if (suggestion == "No Results." || suggestion.isEmpty) return;
+                    Navigator.pushNamed(context, '/medication/info', arguments: {'name': suggestion});
                   },
                 );
               },
