@@ -56,6 +56,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
       ),
       body: Column(children: [
         TextField(
+          autocorrect: false,
           controller: _searchController,
           decoration: const InputDecoration(
             hintText: 'Search...',
@@ -79,6 +80,7 @@ class _MedicinesScreenState extends State<MedicinesScreen> {
                     _searchController.text = suggestion;
                     _suggestionsStream.add([]);
                     // Do something with the selected suggestion.
+
                   },
                 );
               },
