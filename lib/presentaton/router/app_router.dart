@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmine_app/presentaton/screens/appointments_screen.dart';
 import 'package:pharmine_app/presentaton/screens/cart.dart';
+import 'package:pharmine_app/presentaton/screens/search_screen.dart';
 import 'package:pharmine_app/presentaton/screens/home_screen.dart';
 import 'package:pharmine_app/presentaton/screens/medications.dart';
 import 'package:pharmine_app/presentaton/screens/orders_screen.dart';
@@ -29,7 +30,7 @@ class AppRouter {
         );
         case '/appointments':
         return MaterialPageRoute(
-          builder: (_) => const AppointmentsScreen(),
+          builder: (_) => const MedicinesScreen(),
         );
         case '/payment_options':
         return MaterialPageRoute(
